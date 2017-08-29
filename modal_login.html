@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="\colorbox.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="\jquery.colorbox.js"></script>
+</head>
+<body>
+
+<h1>Welcome Back!</h1>
+  <script>
+function reDirect() {
+    parent.jQuery.colorbox.close(); return false;
+}
+</script>
+          
+          <form action="http://127.0.0.1:5002/api/user/login" method="POST" onsubmit="reDirect()">
+          
+            <div class="field-wrap">
+            <label>
+              User Name<span class="req">*</span>
+            </label>
+            <input type="email" name="username" value="username"required autocomplete="off"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Password<span class="req">*</span>
+            </label>
+            <input type="password" name="password" value="password"required autocomplete="off"/>
+          </div>
+          
+          <p class="forgot"><a href="#">Forgot Password?</a></p>
+          
+          <button class="button button-block"/>Log In</button>
+          
+          </form>
+
+
+
+</body>
+</html>

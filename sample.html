@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+<script>
+var xhttp = new XMLHttpRequest();
+var url = "http://localhost:5002/api/ext/survey/distribute"
+function sendRequest(){
+xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", url, true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send("fname=Henry&lname=Ford");
+}
+</script>
+
+</body>
+</html>

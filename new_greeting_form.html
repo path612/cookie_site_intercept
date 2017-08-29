@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <link rel="stylesheet" href="\colorbox.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="\jquery.colorbox.js"></script>
+</head>
+<body>
+<script src="new_greeting_js.js"> </script>
+<script>
+function reDirect() {
+    parent.jQuery.colorbox.close(); return false;
+}
+</script>
+<div class="form">
+      
+      <ul class="tab-group">
+        <li class="tab active"><a href="#signup">Sign Up</a></li>
+        <li class="tab"><a href="modal_login.html">Log In</a></li>
+      </ul>
+      
+      <div class="tab-content">
+        <div id="signup">   
+          <h1>Sign Up!!</h1>
+          
+          <form action= "http://127.0.0.1:5002/api/businesses", method="POST" onsubmit="reDirect()">
+          
+          <div class="top-row">
+            <div class="field-wrap">
+              <label>
+                User Name<span class="req">*</span>
+              </label>
+              <input type="email" name="username" value="username"required autocomplete="off" />
+            </div>
+        
+            <div class="field-wrap">
+              <label>
+                 Name<span class="req">*</span>
+              </label>
+              <input type="text" name="name" value="name"required autocomplete="off"/>
+            </div>
+          </div>
+
+          <div class="field-wrap">
+            <label>
+              Phone<span class="req">*</span>
+            </label>
+            
+            <input type="text" name="phone" value="9999999"required autocomplete="off"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Password<span class="req">*</span>
+            </label>
+            <input type="password" name="password" value="password"required autocomplete="off"/>
+          </div>
+          
+          <input type="submit" value="Get Started!" >
+
+          
+          </form>
+
+        </div>
+        <script>
+        
+
+        </script>
+        
+        
+      
+</div> <!-- /form -->
+</body>
+</html>

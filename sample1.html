@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<link rel="stylesheet" href="\colorbox.css">
+
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="\jquery.colorbox.js"></script>
+
+<div ng-app="siteIntercept" ng-controller="intercept_ctrl"> 
+
+
+</div>
+
+
+<script>
+var app = angular.module('siteIntercept', []);
+app.controller('intercept_ctrl', function($scope,$timeout,$http)
+ {
+ 
+  $timeout(function(){
+  	$http.post("http://localhost:5002/api/ext/survey/distribute",{'businessUserId':2,'eventName':'click'})
+  .then(
+            function openColorBox(){
+      		$.colorbox({iframe:true,width:280, height:300, href: "new_greeting_form.html"});
+      		}
+        , function (response) {
+            console.log(response);
+})},5000)
+
+
+  });
+</script>
+
+</body>
+</html>
